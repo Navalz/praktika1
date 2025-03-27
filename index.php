@@ -19,7 +19,9 @@ if (isset($_SESSION['userEmail'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+
+if ($requestMethod === 'POST') {
     if ($_POST['email'] === CORRECT_EMAIL && $_POST['password'] === CORRECT_PASSWORD) {
         $_SESSION['userEmail'] = $_POST['email'];
         header('Location: index.php');
