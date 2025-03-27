@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Вход</title>
 </head>
 <body>
-
+<div class="form">
+    <h2>Вход</h2>
+    <?php if (isset($error)) : ?>
+    <p class="error"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
+    <form method="POST">
+        <label>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        </label>
+        <button type="submit">Войти</button>
+    </form>
+</div>
 </body>
 </html>
