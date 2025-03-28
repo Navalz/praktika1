@@ -7,6 +7,11 @@ session_start();
 const CORRECT_EMAIL = 'test@mail.ru';
 const CORRECT_PASSWORD = '12345';
 
+if (!empty($_SESSION['user_email'])) {
+    header('Location: /views/dashboard.php');
+    exit();
+}
+
 // Основная логика
 if (isset($_GET['logout'])) {
     session_destroy();
