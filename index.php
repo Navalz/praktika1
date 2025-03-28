@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_SESSION['userEmail'])) {
-    require __DIR__ . '/views/dashboard.html';
+    require __DIR__ . '/views/dashboard.php';
     exit();
 }
 
